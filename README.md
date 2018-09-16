@@ -16,12 +16,12 @@ look. In case of question or errors please do not hesitate to open an issue.
 ```bash
 # see man zshmisc
 function preexec() {
-	export LAST_CMD="${2}"
+  export LAST_CMD="${2}"
 }
 
 # see man zshmisc
 function precmd() {
-	export LAST_EXIT_CODE="$?"
+  export LAST_EXIT_CODE="$?"
   echo $(path/to/prompt.py) | source /dev/stdin
 }
 ```
