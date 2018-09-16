@@ -122,7 +122,7 @@ class LastCommandFragment(PromptPart):
             else ""
         )
 
-    def __len__(sekf) -> int:
+    def __len__(self) -> int:
         # +2 necessary to account for the enclosing square brackets
         return (len(LAST_CMD) + 2) if LAST_CMD else 0
 
