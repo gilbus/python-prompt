@@ -22,7 +22,7 @@ function preexec() {
 # see man zshmisc
 function precmd() {
 	export LAST_EXIT_CODE="$?"
-	path/to/prompt.py | source /dev/stdin
+  echo $(path/to/prompt.py) | source /dev/stdin
 }
 ```
 
