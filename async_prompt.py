@@ -381,10 +381,19 @@ async def handle_client(reader, writer):
         PWDFragment(client_environment.get("PWD"), color=Colors.teal)
     )
     right_container = PromptPartContainer(TimeFragment(color=Colors.gray))
-    prompt_str = " ".join(
+    prompt_str = "".join(
         str(fragment)
         for fragment in (
-            VirtualEnvFragment(client_environment.get("VIRTUAL_ENV", ""), Colors.teal),
+            VirtualEnvFragment(
+                client_environment.get("VIRTUAL_ENV", ""),
+                Colors.teal,
+                format_str="[🐍{}]",
+            ),
+            VirtualEnvFragment(
+                client_environment.get("NODE_VIRTUAL_ENV", ""),
+                Colors.green,
+                format_str="[⬡ {}]",
+            ),
             ColoredTextFragment("➤ ", Colors.red),
         )
         if fragment
